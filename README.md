@@ -1,5 +1,5 @@
 # Cinnamon Desktop On Github Codespace
-This setup installs an Ubuntu 24.04 container with the Cinnamon desktop environment and configures a VNC connection.
+This setup installs an Ubuntu 24.04 container with the Cinnamon desktop environment and configures KasmVNC for remote browser-based access.
 
 Running a desktop environment in Codespaces is generally permitted, as Microsoft themselves provide documentation for setting up a Fluxbox-based desktop with a browser: https://github.com/devcontainers/features/tree/main/src/desktop-lite. In this case, we’ll be using Cinnamon instead. You don’t need to worry about account issues as long as you use the service responsibly and stay within GitHub’s Terms of Service.
 
@@ -8,16 +8,16 @@ Running a desktop environment in Codespaces is generally permitted, as Microsoft
 2. Select this repo `AndnixSH/codespace-desktop`
 3. Select a machine type. To unlock better machine types, file a ticket to Github: https://support.github.com/contact?tags=rr-codespaces%2Ccat_codespace
 4. Click "Create codespace". It will take a while to create
-5. Once created, open PORTS tab, open forwarded address, click on `vnc.html` link and enter your VNC password
+5. Once created, a browser tab should automatically open to the forwarded port `8444`. Alternatively, you can open the **PORTS** tab and open the forwarded address for port `8444`.
+6. When prompted by your browser's Basic Authentication dialog, enter:
+   - **Username**: `qwerty`
+   - **Password**: `qwerty`
 
-The default VNC password is just `password`. You can change it using `vncpasswd` in Terminal. You don't need to worry about weak password because the vnc ports are not public by default, accessing the ports requires your Github account to be logged in. This makes it a lot secure
+The default keyboard layout is English (US). You can change it in Cinnamon settings.
 
-The default keyboard layout is English (US). You can change it in Cinnamon settings
-
-To run Windows app, install Wine: https://wiki.winehq.org/Ubuntu
+To run Windows apps, install Wine: https://wiki.winehq.org/Ubuntu
 
 # Limitations & bugs
-- No audio support. See https://github.com/novnc/noVNC/issues/302
 - No hardware acceleration because Codespace does not have a GPU
 - Terminal won't open. Use Xfce Terminal or others instead
 
